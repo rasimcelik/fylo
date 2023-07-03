@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+:root {
+  --Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+  --Pale-Blue: hsl(243, 100%, 93%);
+  --Grayish-Blue: hsl(229, 7%, 55%);
+  --Dark-Blue: hsl(228, 56%, 26%);
+  --Box: hsl(228, 52%, 31%);
+  --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+/* - Font size: 14px */
+/* - Weights: 400, 700 */
+/* font-family: 'Raleway', sans-serif; */
+
+html {
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--Very-Dark-Blue);
+  color: var(--Pale-Blue);
+  font-size: 14px;
+  margin: 0;
+}
+
+.container {
+  background: url(images/bg-desktop.png) no-repeat bottom;
+  background-size: contain;
+  display: grid;
+  align-items: center;
+  grid-template-rows: minmax(250px, 1fr) 120px;
+  height: 100vh;
+  justify-content: stretch;
+  justify-items: center;
+  padding: 24px;
+  width: 100%;
+}
+
+.card {
+  display: grid;
+  gap: 24px;
+  justify-content: stretch;
+  align-items: end;
+  max-width: 960px;
+  grid-template-columns: 1fr 1.5fr;
+}
+
+.nav-wrapper {
+  background-color: var(--Dark-Blue);
+  border-radius: 10px 80px 10px 10px;
+  padding: 36px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 24px;
+  justify-content: stretch;
+  min-height: 175px;
+  min-width: 175px;
+}
+
+.navigation-bar {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-item {
+  background-color: var(--Very-Dark-Blue);
+  border-radius: 6px;
+  box-shadow: none;
+  border: none;
+  height: 48px;
+  width: 48px;
+  padding: 12px;
+}
+
+.details-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.details-container {
+  background-color: var(--Dark-Blue);
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  min-height: 125px;
+  padding: 24px;
+  width: 100%;
+}
+
+.details-range {
+  display: flex;
+  justify-content: space-between;
+}
+
+.range-indicator-container {
+  background-color: var(--Very-Dark-Blue);
+  border-radius: 20px;
+  height: 20px;
+  margin: 12px 0px;
+}
+
+.range-indicator {
+  background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  height: 16px;
+  margin: 2px;
+  width: 80%;
+}
+
+.range-point {
+  background: var(--Pale-Blue);
+  border-radius: 20px;
+  height: 14px;
+  width: 14px;
+  margin: 1px;
+}
+
+.details-remaining {
+  background: var(--Pale-Blue);
+  align-items: center;
+  border-radius: 4px;
+  color: var(--Very-Dark-Blue);
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+  padding: 18px;
+  position: relative;
+  max-width: 170px;
+}
+
+.details-remaining span {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.details-remaining::before {
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid var(--Pale-Blue);
+  border-top: 10px solid var(--Pale-Blue);
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: 65px;
+}
+
+.details-remaining {
+  align-self: flex-end;
+  right: 24px;
+  top: 24px;
+}
+
+@media screen and (max-width: 650px) {
+  .card {
+    align-items: stretch;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  .container {
+    background: url(images/bg-mobile.png) no-repeat;
+    background-size: cover;
+    justify-items: stretch;
+  }
+  .details-wrapper {
+    position: relative;
+    flex-direction: column-reverse;
+  }
+  .details-remaining {
+    align-self: center;
+    position: absolute;
+    right: 100px;
+    top: 165px;
+    width: 250px;
+    justify-content: center;
+  }
+  .details-remaining span {
+    font-size: 36px;
+    color: var(--Very-Dark-Blue);
+    margin-right: 6px;
+  }
+  .details-remaining {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgb(108, 114, 119);
+  }
+  .details-remaining::before {
+    display: none;
+  }
+}
